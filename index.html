@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>集章卡</title>
+<meta name="apple-mobile-web-app-title" content="集章卡">
+<meta name="application-name" content="集章卡">
+<meta name="theme-color" content="#fde8f0">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&display=swap">
+<script>
+  // The stamp card lives on claude.ai; this page only gives it a home-screen icon.
+  var CARD_URL = 'https://claude.ai/artifact/GmB9SmuJgiGms95byQAozU';
+  // Opened from the home-screen icon (?go) -> jump straight to the card.
+  if (/[?&]go\b/.test(location.search)) location.replace(CARD_URL);
+</script>
+<style>
+  :root { --bg: #fde8f0; --dot: #ffffff; --card: #ffffff; --line: #f8c6d8; --fg: #5a3a4f; --muted: #9a7290; --ink: #f06f9b }
+  * { box-sizing: border-box }
+  html, body { margin: 0; min-height: 100% }
+  body {
+    font-family: "Huninn", "PingFang TC", "Microsoft JhengHei", sans-serif; color: var(--fg); background-color: var(--bg);
+    background-image: radial-gradient(var(--dot) 18%, transparent 19%), radial-gradient(var(--dot) 18%, transparent 19%);
+    background-size: 64px 64px; background-position: 0 0, 32px 32px;
+    display: grid; place-items: center; min-height: 100vh;
+    padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  main { display: grid; justify-items: center; gap: 22px; text-align: center; max-width: 420px; width: 100% }
+  img { width: min(64vw, 260px); border-radius: 22%; box-shadow: 0 10px 0 var(--line) }
+  a.go {
+    display: inline-block; text-decoration: none; color: #fff; background: var(--ink); font-size: 1.35rem;
+    padding: 14px 34px; border-radius: 999px; box-shadow: 0 6px 0 #c94f7a;
+  }
+  a.go:active { transform: translateY(4px); box-shadow: 0 2px 0 #c94f7a }
+  .how { background: var(--card); border: 3px solid var(--line); border-radius: 24px; padding: 16px 20px; text-align: left; line-height: 1.8; font-size: .95rem; width: 100% }
+  .how b { color: var(--ink); font-weight: 400 }
+  .how p { margin: 0 }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="集章卡圖示">
+  <a class="go" href="https://claude.ai/artifact/GmB9SmuJgiGms95byQAozU">打開集章卡</a>
+  <div class="how">
+    <p><b>iPhone / iPad：</b>在 Safari 按「分享」→「加入主畫面」。</p>
+    <p><b>Android：</b>在 Chrome 按「⋮」→「加到主畫面」。</p>
+    <p>之後點主畫面的圖示，就會直接打開集章卡。</p>
+  </div>
+</main>
+<script>
+  // Make "Add to Home Screen" save the ?go address, so the icon opens the card directly.
+  if (!/[?&]go\b/.test(location.search)) history.replaceState(null, '', '?go');
+</script>
+</body>
+</html>
